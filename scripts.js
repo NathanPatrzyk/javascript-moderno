@@ -1,4 +1,5 @@
 // 1 - var, let e const
+
 var x = 10
 var y = 15
 
@@ -37,3 +38,77 @@ const name = 'Pedro'
 logName()
 
 console.log(name)
+
+// 2 - arrow function
+
+const sum = function sum(a,b) {
+    return a+b
+}
+
+const arrowSum = (a, b) => a + b
+
+console.log(sum(5, 5))
+console.log(arrowSum(5, 5))
+
+const greeting = (name) => {
+    if (name) {
+        return 'Olá ' + name + '!'
+    }
+    else {
+        return 'Olá'
+    }
+}
+
+console.log(greeting('Nathan'))
+console.log(greeting())
+
+const testeArrow = () => console.log('testou!')
+
+testeArrow()
+
+const user = {
+    name: "Nathan",
+    sayUserName() {
+        var self = this
+        setTimeout(function () {
+            console.log(self)
+            console.log("Username: " + self.name)
+        }, 500)
+    },
+    sayUserNameArrow() {
+        setTimeout(() => {
+            console.log(this)
+            console.log("Username: " + this.name)
+        }, 700)
+    }
+}
+
+user.sayUserName()
+user.sayUserNameArrow()
+
+// 3 - filter
+
+const arr = [1, 2, 3, 4, 5]
+
+console.log(arr)
+
+const highNumbers = arr.filter((n) => {
+    if (n >= 3) {
+        return n
+    }
+})
+
+console.log(highNumbers)
+
+const users = [
+    { name: 'Matheus', available: true },
+    { name: 'Pedro', available: false },
+    { name: 'João', available: false },
+    { name: 'Nathan', available: true },
+]
+
+const availableUsers = users.filter((user) => user.available)
+const notAvailableUsers = users.filter((user) => !user.available)
+
+console.log(availableUsers)
+console.log(notAvailableUsers)
