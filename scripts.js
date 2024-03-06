@@ -112,3 +112,30 @@ const notAvailableUsers = users.filter((user) => !user.available)
 
 console.log(availableUsers)
 console.log(notAvailableUsers)
+
+// 4 map
+
+const products = [
+    {name: 'Camisa', price: 10.99, category: 'Roupas'},
+    {name: 'Chaleira Elétrica', price: 49.99, category: 'Eletro'},
+    {name: 'Fogão', price: 400, category: 'Eletro'},
+    {name: 'Calça Jeans', price: 50.99, category: 'Roupas'},
+]
+
+products.map((product) => {
+    if (product.category === 'Roupas') {
+        product.onSale = true
+    }
+})
+
+console.log(products)
+
+// 5 template literals
+
+const userName = 'Nathan'
+const age = 19
+
+console.log(`O nome do usuário é ${userName} e ele tem ${age} anos.`)
+console.log('O nome do usuário é ' + userName + ' e ele tem ' + age +' anos.')
+
+// 6 destructuring
